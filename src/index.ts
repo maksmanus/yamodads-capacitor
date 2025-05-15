@@ -8,3 +8,4 @@ const YaMobAds = registerPlugin<YaMobAdsPlugin>('YaMobAds', {
 
 export * from './definitions';
 export { YaMobAds };
+
