@@ -5,7 +5,7 @@ import type { AgeRestrictedUser, InterstialAd, RewardedAd, SetUserContent, Stick
 export class YaMobAdsWeb extends WebPlugin implements YaMobAdsPlugin {
   async LoadInterstialAd(options: InterstialAd): Promise<void> 
   {
-    
+      console.log(options);
   }
   async ShowInterstialAd(): Promise<void> 
   {
@@ -17,7 +17,7 @@ export class YaMobAdsWeb extends WebPlugin implements YaMobAdsPlugin {
   }
   async LoadRewardedAd(options: RewardedAd): Promise<void>
   {
-    
+    console.log(options);
   }
   async ShowRewardedAd(): Promise<void>
   {
@@ -29,7 +29,7 @@ export class YaMobAdsWeb extends WebPlugin implements YaMobAdsPlugin {
   }
   async LoadStickyBannerAd(options: StickyBannerAd): Promise<void>
   {
-    
+    console.log(options);
   }
   async DestroyStickyBanner(): Promise<void> 
   {
@@ -37,11 +37,11 @@ export class YaMobAdsWeb extends WebPlugin implements YaMobAdsPlugin {
   }
   async SetAgeRestrictedUser(options: AgeRestrictedUser): Promise<void> 
   {
-    
+    console.log(options);
   }
   async SetUserContent(options: SetUserContent): Promise<void> 
   {
-    
+    console.log(options);
   }
   async YandexAdsInit(): Promise<void> 
   {
