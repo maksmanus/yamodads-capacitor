@@ -1,6 +1,6 @@
 {
-  "name": "yamodads-capacitor",
-  "version": "0.0.1",
+  "name": "yamobads-capacitor",
+  "version": "0.0.2",
   "description": "Yandex mobile ads from Capacitor",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

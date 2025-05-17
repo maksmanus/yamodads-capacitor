@@ -33,10 +33,8 @@ import android.widget.FrameLayout;
 import android.app.ActionBar;
 
 @CapacitorPlugin(name = "YaMobAds")
-public class YaMobAdsPlugin extends Plugin 
+public class YaMobAds extends Plugin 
 {
-    private YaMobAds implementation = new YaMobAds();
-
     private InterstitialAd interstitialAd = null;
     private InterstitialAdLoader interstitialAdLoader = null;
 
@@ -47,20 +45,11 @@ public class YaMobAdsPlugin extends Plugin
     private AdRequest bannerAdLoader = null;
 
     private Activity activity = null;
-    public static YaMobAdsPlugin Instance = null;
+    public static YaMobAds Instance = null;
 
     public Activity GetActivity()
     {
         return (Activity) this.bridge.getActivity();
-    }
-
-    @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
     }
 
     @PluginMethod
