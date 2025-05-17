@@ -19,15 +19,16 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maximnara/cordova-plugin-google-play-games.git"
+    "url": "git+https://github.com/maksmanus/yamodads-capacitor.git"
   },
   "bugs": {
-    "url": "https://github.com/maximnara/cordova-plugin-google-play-games/issues"
+    "url": "https://github.com/maksmanus/yamodads-capacitor/issues"
   },
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "Yandex Mobile Ads PLugin"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",

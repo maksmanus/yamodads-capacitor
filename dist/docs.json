@@ -1,0 +1,165 @@
+{
+  "api": {
+    "name": "YaMobAdsPlugin",
+    "slug": "yamobadsplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "YandexAdsInit",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "yandexadsinit"
+      },
+      {
+        "name": "SetUserContent",
+        "signature": "(options: SetUserContent) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "SetUserContent"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "SetUserContent"
+        ],
+        "slug": "setusercontent"
+      },
+      {
+        "name": "SetAgeRestrictedUser",
+        "signature": "(options: AgeRestrictedUser) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "AgeRestrictedUser"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "AgeRestrictedUser"
+        ],
+        "slug": "setagerestricteduser"
+      },
+      {
+        "name": "LoadInterstialAd",
+        "signature": "(options: InterstialAd) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "InterstialAd"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "InterstialAd"
+        ],
+        "slug": "loadinterstialad"
+      },
+      {
+        "name": "ShowInterstialAd",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "showinterstialad"
+      },
+      {
+        "name": "DestroyInterstialAd",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "destroyinterstialad"
+      },
+      {
+        "name": "LoadRewardedAd",
+        "signature": "(options: RewardedAd) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "RewardedAd"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "RewardedAd"
+        ],
+        "slug": "loadrewardedad"
+      },
+      {
+        "name": "ShowRewardedAd",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "showrewardedad"
+      },
+      {
+        "name": "DestroyRewardedAd",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "destroyrewardedad"
+      },
+      {
+        "name": "LoadStickyBannerAd",
+        "signature": "(options: StickyBannerAd) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "StickyBannerAd"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "StickyBannerAd"
+        ],
+        "slug": "loadstickybannerad"
+      },
+      {
+        "name": "DestroyStickyBanner",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "destroystickybanner"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
