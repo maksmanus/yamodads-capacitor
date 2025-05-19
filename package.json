@@ -1,7 +1,7 @@
 {
   "name": "yamobads-capacitor",
-  "version": "0.0.2",
-  "description": "Yandex mobile ads from Capacitor",
+  "version": "0.0.3",
+  "description": "Yandex mobile ads for Capacitor",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

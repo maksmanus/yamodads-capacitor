@@ -36,6 +36,8 @@ npx cap sync
 YandexAdsInit() => Promise<void>
 ```
 
+Initizlizing Yandex Ads
+
 --------------------
 
 
@@ -45,9 +47,11 @@ YandexAdsInit() => Promise<void>
 SetUserContent(options: SetUserContent) => Promise<void>
 ```
 
-| Param         | Type                        |
-| ------------- | --------------------------- |
-| **`options`** | <code>SetUserContent</code> |
+Settings user content
+
+| Param         | Type                        | Description                                                                                     |
+| ------------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
+| **`options`** | <code>SetUserContent</code> | - SetUserContent - use user content, using: `YaMobAds.SetUserContent(new SetUserContent(true))` |
 
 --------------------
 
@@ -58,9 +62,9 @@ SetUserContent(options: SetUserContent) => Promise<void>
 SetAgeRestrictedUser(options: AgeRestrictedUser) => Promise<void>
 ```
 
-| Param         | Type                           |
-| ------------- | ------------------------------ |
-| **`options`** | <code>AgeRestrictedUser</code> |
+| Param         | Type                           | Description                                                                                                 |
+| ------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| **`options`** | <code>AgeRestrictedUser</code> | - AgeRestrictedUser - set age for user, using: `YaMobAds.SetAgeRestrictedUser(new AgeRestrictedUser(true))` |
 
 --------------------
 
@@ -71,9 +75,11 @@ SetAgeRestrictedUser(options: AgeRestrictedUser) => Promise<void>
 LoadInterstialAd(options: InterstialAd) => Promise<void>
 ```
 
-| Param         | Type                      |
-| ------------- | ------------------------- |
-| **`options`** | <code>InterstialAd</code> |
+Loading Interstial Yandex Ad
+
+| Param         | Type                      | Description                                                                                   |
+| ------------- | ------------------------- | --------------------------------------------------------------------------------------------- |
+| **`options`** | <code>InterstialAd</code> | - id interstial ad block, using: `YaMobAds.LoadInterstialAd(new InterstialAd('ad-block-id'))` |
 
 --------------------
 
@@ -84,6 +90,8 @@ LoadInterstialAd(options: InterstialAd) => Promise<void>
 ShowInterstialAd() => Promise<void>
 ```
 
+Show Interstial Yandex Ad
+
 --------------------
 
 
@@ -92,6 +100,8 @@ ShowInterstialAd() => Promise<void>
 ```typescript
 DestroyInterstialAd() => Promise<void>
 ```
+
+Destroying Interstial Yandex Ad
 
 --------------------
 
@@ -102,9 +112,11 @@ DestroyInterstialAd() => Promise<void>
 LoadRewardedAd(options: RewardedAd) => Promise<void>
 ```
 
-| Param         | Type                    |
-| ------------- | ----------------------- |
-| **`options`** | <code>RewardedAd</code> |
+Loading Rewarded Yandex Ad
+
+| Param         | Type                    | Description                                                                             |
+| ------------- | ----------------------- | --------------------------------------------------------------------------------------- |
+| **`options`** | <code>RewardedAd</code> | - Rewarded Ad block id, using: `YaMobAds.LoadRewardedAd(new RewardedAd('ad-block-id'))` |
 
 --------------------
 
@@ -115,6 +127,8 @@ LoadRewardedAd(options: RewardedAd) => Promise<void>
 ShowRewardedAd() => Promise<void>
 ```
 
+Showing Rewarded Yandex Ad
+
 --------------------
 
 
@@ -123,6 +137,8 @@ ShowRewardedAd() => Promise<void>
 ```typescript
 DestroyRewardedAd() => Promise<void>
 ```
+
+Destroing Rewarded Yandex Ad
 
 --------------------
 
@@ -133,9 +149,9 @@ DestroyRewardedAd() => Promise<void>
 LoadStickyBannerAd(options: StickyBannerAd) => Promise<void>
 ```
 
-| Param         | Type                        |
-| ------------- | --------------------------- |
-| **`options`** | <code>StickyBannerAd</code> |
+| Param         | Type                        | Description                                                                                                 |
+| ------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **`options`** | <code>StickyBannerAd</code> | - Sticky Yandex Banner ad block id, using: `YaMobAds.LoadStickyBannerAd(new StickyBannerAd('ad-block-id'))` |
 
 --------------------
 
@@ -145,6 +161,8 @@ LoadStickyBannerAd(options: StickyBannerAd) => Promise<void>
 ```typescript
 DestroyStickyBanner() => Promise<void>
 ```
+
+Destroying Sticky Banner yandex ads
 
 --------------------
 

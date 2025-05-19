@@ -1,5 +1,19 @@
 import { WebPlugin } from '@capacitor/core';
 export class YaMobAdsWeb extends WebPlugin {
+    constructor() {
+        super(...arguments);
+        this.Demoblocks = {
+            YandexBanner: 'demo-banner-yandex',
+            YandexInterstial: 'demo-interstitial-yandex',
+            YandexRewarded: 'demo-rewarded-yandex',
+            YandexNativeApp: 'demo-native-app-yandex',
+            YandexNativeVideo: 'demo-native-video-yandex',
+            YandexNativeContent: 'demo-native-content-yandex',
+            YandexAppopenAd: 'demo-appopenad-yandex',
+            YandexFeed: 'demo-feed-yandex',
+            YandexNativeBulk: 'demo-native-bulk-yandex',
+        };
+    }
     async LoadInterstialAd(options) {
         console.log(options);
     }

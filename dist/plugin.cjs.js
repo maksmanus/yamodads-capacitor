@@ -27,18 +27,17 @@ class StickyBannerAd {
         this.ad_id = _ad_id;
     }
 }
+/**
+ * @typedef {Object} YaModAdsEvents
+ * Object contains YAndex Ads Events
+ */
 const YaModAdsEvents = {
-    DemoBlocks: {
-        YandexBanner: 'demo-banner-yandex',
-        YandexInterstial: 'demo-interstitial-yandex',
-        YandexRewarded: 'demo-rewarded-yandex',
-        YandexNativeApp: 'demo-native-app-yandex',
-        YandexNativeVideo: 'demo-native-video-yandex',
-        YandexNativeContent: 'demo-native-content-yandex',
-        YandexAppopenAd: 'demo-appopenad-yandex',
-        YandexFeed: 'demo-feed-yandex',
-        YandexNativeBulk: 'demo-native-bulk-yandex',
-    },
+    /**
+     * @typedef {Object} InterstialEventsNames
+     * InterstialEventsNames contains Interstial Yandex Ads Events,
+     * @example
+     *      document.addEventListener(YaModAdsEvents.InterstialEventsNames.onAdClicked, YOUR_FUNCTION)
+     */
     InterstialEventsNames: {
         onAdFailedToLoad: 'onAdFailedToLoadInterstial',
         onAdLoaded: 'onAdLoadedInterstial',
@@ -48,6 +47,12 @@ const YaModAdsEvents = {
         onAdImpression: 'onAdImpressionInterstial',
         onAdShown: 'onAdShownInterstial'
     },
+    /**
+     * @typedef {Object} RewardedEventsNames
+     * * RewardedEventsNames contains Rewarded Yandex Ads Events,
+     * @example
+     *      document.addEventListener(YaModAdsEvents.RewardedEventsNames.onAdClicked, YOUR_FUNCTION)
+     */
     RewardedEventsNames: {
         onAdFailedToLoad: 'onAdFailedToLoadRewarded',
         onAdLoaded: 'onAdLoadedRewarded',
@@ -58,6 +63,12 @@ const YaModAdsEvents = {
         onAdShown: 'onAdShownRewarded',
         onRewarded: 'onRewardedRewarded'
     },
+    /**
+     * @typedef {Object} StickyEventsNames
+     * StickyEventsNames contains Sticky banner Yandex Ads Events,
+     * @example
+     *      document.addEventListener(YaModAdsEvents.StickyEventsNames.onAdClicked, YOUR_FUNCTION)
+     */
     StickyEventsNames: {
         onAdClicked: 'onAdClickedSticky',
         onAdFailedToLoad: 'onAdFailedToLoadSticky',
@@ -67,12 +78,47 @@ const YaModAdsEvents = {
         onReturnedToApplication: 'onReturnedToApplicationSticky'
     }
 };
+/**
+ * @typedef {Object} YaMobAdsDemoblocks
+ * YaMobAdsDemoblocks - object with demo ids yandex ads mobile demo ads
+ * @property {string} YaMobAdsDemoblocks.YandexBanner - Demp banner ads
+ * @property {string} YaMobAdsDemoblocks.YandexInterstial - Demp interstial ads
+ * @property {string} YaMobAdsDemoblocks.YandexRewarded - Demp rewarded ads
+ * @property {string} YaMobAdsDemoblocks.YandexNativeApp - Demp native app ads
+ * @property {string} YaMobAdsDemoblocks.YandexNativeVideo - Demp native video ads
+ * @property {string} YaMobAdsDemoblocks.YandexFeed - Demp feed ads
+ */
+const YaMobAdsDemoblocks = {
+    YandexBanner: 'demo-banner-yandex',
+    YandexInterstial: 'demo-interstitial-yandex',
+    YandexRewarded: 'demo-rewarded-yandex',
+    YandexNativeApp: 'demo-native-app-yandex',
+    YandexNativeVideo: 'demo-native-video-yandex',
+    YandexNativeContent: 'demo-native-content-yandex',
+    YandexAppopenAd: 'demo-appopenad-yandex',
+    YandexFeed: 'demo-feed-yandex',
+    YandexNativeBulk: 'demo-native-bulk-yandex',
+};
 
 const YaMobAds = core.registerPlugin('YaMobAds', {
     web: () => Promise.resolve().then(function () { return web; }).then((m) => new m.YaMobAdsWeb()),
 });
 
 class YaMobAdsWeb extends core.WebPlugin {
+    constructor() {
+        super(...arguments);
+        this.Demoblocks = {
+            YandexBanner: 'demo-banner-yandex',
+            YandexInterstial: 'demo-interstitial-yandex',
+            YandexRewarded: 'demo-rewarded-yandex',
+            YandexNativeApp: 'demo-native-app-yandex',
+            YandexNativeVideo: 'demo-native-video-yandex',
+            YandexNativeContent: 'demo-native-content-yandex',
+            YandexAppopenAd: 'demo-appopenad-yandex',
+            YandexFeed: 'demo-feed-yandex',
+            YandexNativeBulk: 'demo-native-bulk-yandex',
+        };
+    }
     async LoadInterstialAd(options) {
         console.log(options);
     }
@@ -118,5 +164,6 @@ exports.RewardedAd = RewardedAd;
 exports.SetUserContent = SetUserContent;
 exports.StickyBannerAd = StickyBannerAd;
 exports.YaMobAds = YaMobAds;
+exports.YaMobAdsDemoblocks = YaMobAdsDemoblocks;
 exports.YaModAdsEvents = YaModAdsEvents;
 //# sourceMappingURL=plugin.cjs.js.map

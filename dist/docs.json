@@ -11,7 +11,7 @@
         "parameters": [],
         "returns": "Promise<void>",
         "tags": [],
-        "docs": "",
+        "docs": "Initizlizing Yandex Ads",
         "complexTypes": [],
         "slug": "yandexadsinit"
       },
@@ -21,13 +21,22 @@
         "parameters": [
           {
             "name": "options",
-            "docs": "",
+            "docs": "- SetUserContent - use user content, using: `YaMobAds.SetUserContent(new SetUserContent(true))`",
             "type": "SetUserContent"
           }
         ],
         "returns": "Promise<void>",
-        "tags": [],
-        "docs": "",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - SetUserContent - use user content, using: `YaMobAds.SetUserContent(new SetUserContent(true))`"
+          },
+          {
+            "name": "example",
+            "text": "YaMobAds.SetUserContent(new SetUserContent(true))"
+          }
+        ],
+        "docs": "Settings user content",
         "complexTypes": [
           "SetUserContent"
         ],
@@ -39,12 +48,25 @@
         "parameters": [
           {
             "name": "options",
-            "docs": "",
+            "docs": "- AgeRestrictedUser - set age for user, using: `YaMobAds.SetAgeRestrictedUser(new AgeRestrictedUser(true))`",
             "type": "AgeRestrictedUser"
           }
         ],
         "returns": "Promise<void>",
-        "tags": [],
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - AgeRestrictedUser - set age for user, using: `YaMobAds.SetAgeRestrictedUser(new AgeRestrictedUser(true))`"
+          },
+          {
+            "name": "example",
+            "text": "YaMobAds.SetAgeRestrictedUser(new AgeRestrictedUser(true))"
+          },
+          {
+            "name": "example",
+            "text": "YaMobAds.SetAgeRestrictedUser(new AgeRestrictedUser(false))"
+          }
+        ],
         "docs": "",
         "complexTypes": [
           "AgeRestrictedUser"
@@ -57,13 +79,22 @@
         "parameters": [
           {
             "name": "options",
-            "docs": "",
+            "docs": "- id interstial ad block, using: `YaMobAds.LoadInterstialAd(new InterstialAd('ad-block-id'))`",
             "type": "InterstialAd"
           }
         ],
         "returns": "Promise<void>",
-        "tags": [],
-        "docs": "",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - id interstial ad block, using: `YaMobAds.LoadInterstialAd(new InterstialAd('ad-block-id'))`"
+          },
+          {
+            "name": "example",
+            "text": "    YaMobAds.LoadInterstialAd(new InterstialAd('ad-block-id'))"
+          }
+        ],
+        "docs": "Loading Interstial Yandex Ad",
         "complexTypes": [
           "InterstialAd"
         ],
@@ -75,7 +106,7 @@
         "parameters": [],
         "returns": "Promise<void>",
         "tags": [],
-        "docs": "",
+        "docs": "Show Interstial Yandex Ad",
         "complexTypes": [],
         "slug": "showinterstialad"
       },
@@ -85,7 +116,7 @@
         "parameters": [],
         "returns": "Promise<void>",
         "tags": [],
-        "docs": "",
+        "docs": "Destroying Interstial Yandex Ad",
         "complexTypes": [],
         "slug": "destroyinterstialad"
       },
@@ -95,13 +126,22 @@
         "parameters": [
           {
             "name": "options",
-            "docs": "",
+            "docs": "- Rewarded Ad block id, using: `YaMobAds.LoadRewardedAd(new RewardedAd('ad-block-id'))`",
             "type": "RewardedAd"
           }
         ],
         "returns": "Promise<void>",
-        "tags": [],
-        "docs": "",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Rewarded Ad block id, using: `YaMobAds.LoadRewardedAd(new RewardedAd('ad-block-id'))`"
+          },
+          {
+            "name": "example",
+            "text": "     YaMobAds.LoadRewardedAd(new RewardedAd('ad-block-id'))"
+          }
+        ],
+        "docs": "Loading Rewarded Yandex Ad",
         "complexTypes": [
           "RewardedAd"
         ],
@@ -113,7 +153,7 @@
         "parameters": [],
         "returns": "Promise<void>",
         "tags": [],
-        "docs": "",
+        "docs": "Showing Rewarded Yandex Ad",
         "complexTypes": [],
         "slug": "showrewardedad"
       },
@@ -123,7 +163,7 @@
         "parameters": [],
         "returns": "Promise<void>",
         "tags": [],
-        "docs": "",
+        "docs": "Destroing Rewarded Yandex Ad",
         "complexTypes": [],
         "slug": "destroyrewardedad"
       },
@@ -133,12 +173,21 @@
         "parameters": [
           {
             "name": "options",
-            "docs": "",
+            "docs": "- Sticky Yandex Banner ad block id, using: `YaMobAds.LoadStickyBannerAd(new StickyBannerAd('ad-block-id'))`",
             "type": "StickyBannerAd"
           }
         ],
         "returns": "Promise<void>",
-        "tags": [],
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Sticky Yandex Banner ad block id, using: `YaMobAds.LoadStickyBannerAd(new StickyBannerAd('ad-block-id'))`"
+          },
+          {
+            "name": "example",
+            "text": "      YaMobAds.LoadStickyBannerAd(new StickyBannerAd('ad-block-id'))"
+          }
+        ],
         "docs": "",
         "complexTypes": [
           "StickyBannerAd"
@@ -151,7 +200,7 @@
         "parameters": [],
         "returns": "Promise<void>",
         "tags": [],
-        "docs": "",
+        "docs": "Destroying Sticky Banner yandex ads",
         "complexTypes": [],
         "slug": "destroystickybanner"
       }
