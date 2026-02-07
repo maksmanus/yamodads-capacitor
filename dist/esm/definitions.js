@@ -23,6 +23,11 @@ export class StickyBannerAd {
         this.ad_id = _ad_id;
     }
 }
+export class AppOpenAd {
+    constructor(_ad_id) {
+        this.ad_id = _ad_id;
+    }
+}
 /**
  * @typedef {Object} YaModAdsEvents
  * Object contains YAndex Ads Events
@@ -72,6 +77,21 @@ export const YaModAdsEvents = {
         onImpression: 'onImpressionSticky',
         onLeftApplication: 'onLeftApplicationSticky',
         onReturnedToApplication: 'onReturnedToApplicationSticky'
+    },
+    /**
+    * @typedef {Object} AppOpenEventsNames
+    * AppOpenEventsNames contains App Open Yandex Ads Events,
+    * @example
+    *      document.addEventListener(YaModAdsEvents.AppOpenEventsNames.onAdClicked, YOUR_FUNCTION)
+    */
+    AppOpenEventsNames: {
+        onAdLoaded: 'onAdLoadedAppOpen',
+        onAdShown: 'onAdShownAppOpen',
+        onAdFailedToShow: 'onAdFailedToShowAppOpen',
+        onAdDismissed: 'onAdDismissedAppOpen',
+        onAdClicked: 'onAdClickedAppOpen',
+        onAdImpression: 'onAdImpressionAppOpen',
+        onAdFailedToLoad: 'onAdFailedToLoadAppOpen'
     }
 };
 /**

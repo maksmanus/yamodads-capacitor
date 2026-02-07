@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { AgeRestrictedUser, InterstialAd, RewardedAd, SetUserContent, StickyBannerAd, YaMobAdsPlugin } from './definitions';
+import type { AgeRestrictedUser, AppOpenAd, InterstialAd, RewardedAd, SetUserContent, StickyBannerAd, YaMobAdsPlugin } from './definitions';
 
 export class YaMobAdsWeb extends WebPlugin implements YaMobAdsPlugin {
   Demoblocks = {
@@ -57,6 +57,24 @@ export class YaMobAdsWeb extends WebPlugin implements YaMobAdsPlugin {
   async YandexAdsInit(): Promise<void> 
   {
     
+  }
+  async DestroyAppOpenAd(): Promise<void> 
+  {
+      
+  }
+  async LoadAppOpenAd(options: AppOpenAd): Promise<void> 
+  {
+      console.log(options)
+  }
+
+  async SetAutoShowAppOpenAd(options: boolean): Promise<void>
+  {
+      console.log(options);
+  }
+
+  async ShowAppOpenAd(): Promise<void> 
+  {
+      
   }
   async echo(options: { value: string }): Promise<{ value: string }> {
     console.log('ECHO', options);

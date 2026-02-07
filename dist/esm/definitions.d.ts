@@ -18,6 +18,10 @@ export declare class StickyBannerAd {
     ad_id: string;
     constructor(_ad_id: string);
 }
+export declare class AppOpenAd {
+    ad_id: string;
+    constructor(_ad_id: string);
+}
 export interface YaMobAdsPlugin {
     /**
      * Initizlizing Yandex Ads
@@ -77,6 +81,26 @@ export interface YaMobAdsPlugin {
      * Destroying Sticky Banner yandex ads
      */
     DestroyStickyBanner(): Promise<void>;
+    /**
+     * Loading Rewarded Yandex Ad
+     * @param options - AppOpen Ad block id, using: `YaMobAds.LoadAppOpenAd(new AppOpenAd('ad-block-id'))`
+     * @example
+     *      YaMobAds.LoadAppOpenAd(new AppOpenAd('ad-block-id'))
+     */
+    LoadAppOpenAd(options: AppOpenAd): Promise<void>;
+    /**
+     * Showin AppOpenAd yandex ads
+     */
+    ShowAppOpenAd(): Promise<void>;
+    /**
+     * Destroing AppOpenAd yandex ads
+     */
+    DestroyAppOpenAd(): Promise<void>;
+    /**
+     *  sets auto showing AppOpenAd yandex ads
+     * @param options true / false
+     */
+    SetAutoShowAppOpenAd(options: boolean): Promise<void>;
 }
 /**
  * @typedef {Object} YaModAdsEvents
@@ -127,6 +151,21 @@ export declare const YaModAdsEvents: {
         onImpression: string;
         onLeftApplication: string;
         onReturnedToApplication: string;
+    };
+    /**
+    * @typedef {Object} AppOpenEventsNames
+    * AppOpenEventsNames contains App Open Yandex Ads Events,
+    * @example
+    *      document.addEventListener(YaModAdsEvents.AppOpenEventsNames.onAdClicked, YOUR_FUNCTION)
+    */
+    AppOpenEventsNames: {
+        onAdLoaded: string;
+        onAdShown: string;
+        onAdFailedToShow: string;
+        onAdDismissed: string;
+        onAdClicked: string;
+        onAdImpression: string;
+        onAdFailedToLoad: string;
     };
 };
 /**

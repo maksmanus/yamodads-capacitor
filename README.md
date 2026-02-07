@@ -24,6 +24,10 @@ npx cap sync
 * [`DestroyRewardedAd()`](#destroyrewardedad)
 * [`LoadStickyBannerAd(...)`](#loadstickybannerad)
 * [`DestroyStickyBanner()`](#destroystickybanner)
+* [`LoadAppOpenAd(...)`](#loadappopenad)
+* [`ShowAppOpenAd()`](#showappopenad)
+* [`DestroyAppOpenAd()`](#destroyappopenad)
+* [`SetAutoShowAppOpenAd(...)`](#setautoshowappopenad)
 
 </docgen-index>
 
@@ -163,6 +167,58 @@ DestroyStickyBanner() => Promise<void>
 ```
 
 Destroying Sticky Banner yandex ads
+
+--------------------
+
+
+### LoadAppOpenAd(...)
+
+```typescript
+LoadAppOpenAd(options: AppOpenAd) => Promise<void>
+```
+
+Loading Rewarded Yandex Ad
+
+| Param         | Type                   | Description                                                                          |
+| ------------- | ---------------------- | ------------------------------------------------------------------------------------ |
+| **`options`** | <code>AppOpenAd</code> | - AppOpen Ad block id, using: `YaMobAds.LoadAppOpenAd(new AppOpenAd('ad-block-id'))` |
+
+--------------------
+
+
+### ShowAppOpenAd()
+
+```typescript
+ShowAppOpenAd() => Promise<void>
+```
+
+Showin AppOpenAd yandex ads
+
+--------------------
+
+
+### DestroyAppOpenAd()
+
+```typescript
+DestroyAppOpenAd() => Promise<void>
+```
+
+Destroing AppOpenAd yandex ads
+
+--------------------
+
+
+### SetAutoShowAppOpenAd(...)
+
+```typescript
+SetAutoShowAppOpenAd(options: boolean) => Promise<void>
+```
+
+sets auto showing AppOpenAd yandex ads
+
+| Param         | Type                 | Description  |
+| ------------- | -------------------- | ------------ |
+| **`options`** | <code>boolean</code> | true / false |
 
 --------------------
 

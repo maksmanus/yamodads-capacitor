@@ -6,14 +6,13 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.getcapacitor.util.HostMask.Util;
+import com.yandex.mobile.ads.appopenad.AppOpenAd;
+import com.yandex.mobile.ads.appopenad.AppOpenAdEventListener;
+import com.yandex.mobile.ads.appopenad.AppOpenAdLoadListener;
+import com.yandex.mobile.ads.appopenad.AppOpenAdLoader;
 import com.yandex.mobile.ads.banner.BannerAdEventListener;
 import com.yandex.mobile.ads.banner.BannerAdView;
-import com.yandex.mobile.ads.common.AdError;
-import com.yandex.mobile.ads.common.AdRequest;
-import com.yandex.mobile.ads.common.AdRequestConfiguration;
-import com.yandex.mobile.ads.common.AdRequestError;
-import com.yandex.mobile.ads.common.ImpressionData;
-import com.yandex.mobile.ads.common.MobileAds;
+import com.yandex.mobile.ads.common.*;
 import com.yandex.mobile.ads.interstitial.InterstitialAd;
 import com.yandex.mobile.ads.interstitial.InterstitialAdEventListener;
 import com.yandex.mobile.ads.interstitial.InterstitialAdLoadListener;
@@ -39,13 +38,37 @@ public class YaMobAds extends Plugin
     private InterstitialAdLoader interstitialAdLoader = null;
 
     private RewardedAdLoader rewardedAdLoader = null;
+
+    private AppOpenAdLoader appOpenAdLoader = null;
     private RewardedAd rewardedAd = null;
 
     private BannerAdView bannerAd = null;
     private AdRequest bannerAdLoader = null;
 
+    private AppOpenAd appOpenAd = null;
+
     private Activity activity = null;
+    private boolean firstLaunchApp = false;
+    private boolean isEnabledAutoShowsAppOpenAd = false;
+
     public static YaMobAds Instance = null;
+
+    @Override
+    protected void handleOnStart()
+    {
+        super.handleOnStart();
+        firstLaunchApp = true;
+    }
+
+    @Override
+    protected void handleOnResume()
+    {
+        super.handleOnResume();
+        if (firstLaunchApp == false && isEnabledAutoShowsAppOpenAd == true)
+        {
+            appOpenAd.show(activity);
+        }
+    }
 
     public Activity GetActivity()
     {
@@ -61,6 +84,7 @@ public class YaMobAds extends Plugin
             public void run() 
             {
                 MobileAds.initialize(activity, () -> {});
+
                 call.resolve();
             }
         });
@@ -264,6 +288,7 @@ public class YaMobAds extends Plugin
                                 Utils.RunJsEvent(RewardedEvents.onRewarded);
                             }
                         });
+                        Utils.RunJsEvent(RewardedEvents.onAdLoaded);
                     }
                     
                 });
@@ -315,7 +340,7 @@ public class YaMobAds extends Plugin
     @PluginMethod
     public void LoadStickyBannerAd(PluginCall call)
     {
-        String ad_id = call.getString("ad_ad");
+        String ad_id = call.getString("ad_id");
         activity.runOnUiThread(new Runnable() 
         {
             @Override
@@ -389,6 +414,112 @@ public class YaMobAds extends Plugin
                     bannerAd = null;
                     call.resolve();
                 }
+            }
+        });
+    }
+
+    @PluginMethod
+    public void LoadAppOpenAd(PluginCall call)
+    {
+        String ad_id = call.getString("ad_id");
+        activity.runOnUiThread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                appOpenAdLoader = new AppOpenAdLoader(activity);
+                appOpenAdLoader.setAdLoadListener(new AppOpenAdLoadListener()
+                {
+                    @Override
+                    public void onAdLoaded(AppOpenAd _appOpenAd)
+                    {
+                        appOpenAd = _appOpenAd;
+                        appOpenAd.setAdEventListener(new AppOpenAdEventListener()
+                        {
+                            @Override
+                            public void onAdShown()
+                            {
+                                Utils.RunJsEvent(AppOpenEvents.onAdLoaded);
+                            }
+
+                            @Override
+                            public void onAdFailedToShow(AdError adError)
+                            {
+                                Utils.RunJsEvent(AppOpenEvents.onAdFailedToShow);
+                            }
+
+                            @Override
+                            public void onAdDismissed()
+                            {
+                                Utils.RunJsEvent(AppOpenEvents.onAdDismissed);
+                            }
+
+                            @Override
+                            public void onAdClicked()
+                            {
+                                Utils.RunJsEvent(AppOpenEvents.onAdClicked);
+                            }
+
+                            @Override
+                            public void onAdImpression(ImpressionData impressionData)
+                            {
+                                Utils.RunJsEvent(AppOpenEvents.onAdImpression);
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(AdRequestError adRequestError)
+                    {
+                        Utils.RunJsEvent(AppOpenEvents.onAdFailedToLoad);
+                    }
+                });
+
+                AdRequestConfiguration adRequestConfiguration = new AdRequestConfiguration.Builder(ad_id).build();
+                appOpenAdLoader.loadAd(adRequestConfiguration);
+                call.resolve();
+            }
+        });
+    }
+
+    @PluginMethod
+    public void ShowAppOpenAd(PluginCall call)
+    {
+        activity.runOnUiThread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                appOpenAd.show(bridge.getActivity());
+                call.resolve();
+            }
+        });
+    }
+
+    @PluginMethod
+    public void DestroyAppOpenAd(PluginCall call)
+    {
+        activity.runOnUiThread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                appOpenAd = null;
+                call.resolve();
+            }
+        });
+    }
+
+    @PluginMethod
+    public void SetAutoShowAppOpenAd(PluginCall call)
+    {
+        activity.runOnUiThread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                isEnabledAutoShowsAppOpenAd = call.getBoolean("options");
+                call.resolve();
             }
         });
     }

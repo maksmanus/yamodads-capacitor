@@ -42,6 +42,16 @@ export class YaMobAdsWeb extends WebPlugin {
     }
     async YandexAdsInit() {
     }
+    async DestroyAppOpenAd() {
+    }
+    async LoadAppOpenAd(options) {
+        console.log(options);
+    }
+    async SetAutoShowAppOpenAd(options) {
+        console.log(options);
+    }
+    async ShowAppOpenAd() {
+    }
     async echo(options) {
         console.log('ECHO', options);
         return options;

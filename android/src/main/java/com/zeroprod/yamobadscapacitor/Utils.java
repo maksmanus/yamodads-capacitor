@@ -11,12 +11,12 @@ public class Utils
     public static void RunJsEvent(String eventname)
     {
         String callEvent = String.format("javascript:document.dispatchEvent(new Event('%s'))", eventname);
-        YaMobAdsPlugin.Instance.GetActivity().runOnUiThread(new Runnable() 
+        YaMobAds.Instance.GetActivity().runOnUiThread(new Runnable() 
         {
             @Override
             public void run() 
             {
-                YaMobAdsPlugin.Instance.getBridge().getWebView().loadUrl(callEvent);
+                YaMobAds.Instance.getBridge().getWebView().loadUrl(callEvent);
             }
         });
     }    

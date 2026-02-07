@@ -203,6 +203,74 @@
         "docs": "Destroying Sticky Banner yandex ads",
         "complexTypes": [],
         "slug": "destroystickybanner"
+      },
+      {
+        "name": "LoadAppOpenAd",
+        "signature": "(options: AppOpenAd) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- AppOpen Ad block id, using: `YaMobAds.LoadAppOpenAd(new AppOpenAd('ad-block-id'))`",
+            "type": "AppOpenAd"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - AppOpen Ad block id, using: `YaMobAds.LoadAppOpenAd(new AppOpenAd('ad-block-id'))`"
+          },
+          {
+            "name": "example",
+            "text": "     YaMobAds.LoadAppOpenAd(new AppOpenAd('ad-block-id'))"
+          }
+        ],
+        "docs": "Loading Rewarded Yandex Ad",
+        "complexTypes": [
+          "AppOpenAd"
+        ],
+        "slug": "loadappopenad"
+      },
+      {
+        "name": "ShowAppOpenAd",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Showin AppOpenAd yandex ads",
+        "complexTypes": [],
+        "slug": "showappopenad"
+      },
+      {
+        "name": "DestroyAppOpenAd",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Destroing AppOpenAd yandex ads",
+        "complexTypes": [],
+        "slug": "destroyappopenad"
+      },
+      {
+        "name": "SetAutoShowAppOpenAd",
+        "signature": "(options: boolean) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "true / false",
+            "type": "boolean"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options true / false"
+          }
+        ],
+        "docs": "sets auto showing AppOpenAd yandex ads",
+        "complexTypes": [],
+        "slug": "setautoshowappopenad"
       }
     ],
     "properties": []
