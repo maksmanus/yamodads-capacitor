@@ -5,7 +5,7 @@ Yandex mobile ads from Capacitor
 ## Install
 
 ```bash
-npm install yamodads-capacitor
+npm install https://github.com/maksmanus/yamodads-capacitor.git
 npx cap sync
 ```
 
